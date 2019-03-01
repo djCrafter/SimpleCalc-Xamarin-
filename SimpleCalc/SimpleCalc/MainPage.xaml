@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:SimpleCalc"
+             xmlns:local="clr-namespace:SimpleCalc"            
              x:Class="SimpleCalc.MainPage">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -44,20 +44,20 @@
 
             <Grid Grid.ColumnSpan="4" RowSpacing="1" ColumnSpacing="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition x:Name="row1" Height="2*"/>
+                    <RowDefinition x:Name="row1" Height="*"/>
                     <RowDefinition x:Name="row2" Height="*"/>
                     <RowDefinition x:Name="row3" Height="2*"/>
                     <RowDefinition x:Name="row4" Height="*"/>
                 </Grid.RowDefinitions>
 
                 <Label x:Name="secondOperandLabel" Grid.Row="0" Text="" HorizontalTextAlignment="End" VerticalTextAlignment="End" TextColor="Black"
-        FontSize="50"/>
+        FontSize="25"/>
                 <Label x:Name="operatorLabel" Grid.Row="1" Text="" HorizontalTextAlignment="End" VerticalTextAlignment="End" TextColor="Black"
         FontSize="20"/>
                 <Label x:Name="firstOperandLabel" Text="0" Grid.Row="2" HorizontalTextAlignment="End" VerticalTextAlignment="End" TextColor="Black"
-        FontSize="50"/>
+        FontSize="50" PropertyChanged="FirstOperandLabel_PropertyChanged"/>
                 <Label x:Name="resultLabel" Grid.Row="3" Text="" HorizontalTextAlignment="End" VerticalTextAlignment="End" TextColor="Black"
-        FontSize="25"/>
+        FontSize="25" PropertyChanged="ResultLabel_PropertyChanged"/>
             </Grid>
             
             <Button Text = "C" Grid.Row="1" Grid.Column="0"
@@ -94,8 +94,8 @@
         Style="{StaticResource orangeButton}" Clicked="OperatorButtonClicked"/>
             <Button Text = "0" Grid.ColumnSpan="2"
         Grid.Row="5" Grid.Column="0" Style="{StaticResource plainButton}" Clicked="NumbersButtonClick"/>
-            <Button Text = "," Grid.Row="5" Grid.Column="2"
-        Style="{StaticResource plainButton}" Clicked="CommaClicked"/>
+            <Button Text = "." Grid.Row="5" Grid.Column="2"
+        Style="{StaticResource plainButton}" Clicked="Dot_Clicked"/>
             <Button Text = "=" Grid.Row="5" Grid.Column="3"
         Style="{StaticResource orangeButton}" Clicked="EqualClicked"/>
         </Grid>
