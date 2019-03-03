@@ -68,9 +68,8 @@ namespace SimpleCalc
             resultLabel.Text = string.Empty;
             dotInLine = false;
             pressedDot = false;
-
-            if (resultFont)
-                ReturnOriginalFonts();
+            
+            ReturnOriginalFonts();
         }
 
         /// <summary>
@@ -82,9 +81,9 @@ namespace SimpleCalc
             operatorLabel.Text = button.Text;
 
             if (currentState == -1)
-            {
-                ReturnOriginalFonts();
+            {             
                 currentState = 1;
+                ReturnOriginalFonts();             
             }
             if (currentState == 0)
             {
